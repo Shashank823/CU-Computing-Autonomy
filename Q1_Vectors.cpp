@@ -14,7 +14,7 @@ struct Student {
 void printStudents(vector<Student> students) {
     
     int n = students.size();
-    for (int i = 0; i < n; i++ ){
+    for (int i = 0; i < n; i++ ) {
         cout<< "FirstName = "<< students[i].firstName<< "|" << "LastName = "<< students[i].lastName<< "|" << "StudentId = "<<students[i].studentID<< "|" << "GPA ="<<students[i].GPA<< "\n"; 
     }
 };
@@ -45,10 +45,14 @@ vector<Student> delStudent(vector<Student> students) {
     cout << "ID to delete: " << studentIDtoDel << endl;
 
     vector<Student> newStudents;
-    for (int i = 0; i < students.size(); i++){
-        if(students[i].studentID != studentIDtoDel) {
-            newStudents.push_back(students[i]);
+    
+    int n = students.size();
+    
+    for (int i = 0; i < n; i++) {
+        if (students[i].studentID == studentIDtoDel) {
+            continue;
         }
+        newStudents.push_back(students[i]);
     }
     
     return newStudents;
